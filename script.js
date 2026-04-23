@@ -37,80 +37,70 @@ setInterval(updateCountdown, 1000);
 updateCountdown();
 
 
-// Отправка формы в Telegram
-const rsvpForm = document.getElementById("rsvp-form");
+const form = document.getElementById("rsvp-form");
+const formMessage = document.getElementById("form-message");
 
-if (rsvpForm) {
-  rsvpForm.addEventListener("submit", async function (e) {
+if (form) {
+
+  let isSending = false;
+
+  form.addEventListener("submit", async function(e) {
+
     e.preventDefault();
 
-    const form = e.target;
+    if (isSending) return;
+
+    isSending = true;
+
+    const submitBtn = form.querySelector(".submit-btn");
+
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = "0.6";
+
     const formData = new FormData(form);
 
-const name = formData.get("name")?.trim() || "—";
-
-const attendance =
-  formData.get("attendance") === "yes"
-    ? "Да, с удовольствием!"
-    : "К сожалению, не смогу";
-
-const drinks = formData.getAll("items[]");
-const drinksText = drinks.length ? drinks.join(", ") : "ничего не выбрано";
-
-const accommodation =
-  formData.get("plusone") === "yes"
-    ? "нужно размещение"
-    : "есть где остановиться";
-
-    const message = `✨ Новая анкета на свадьбу ✨
-
-Имя: ${name}
-
-Присутствие: ${attendance}
-
-Напитки: ${drinksText}
-
-Размещение: ${accommodation}`;
-
-    const botToken = "8788838472:AAHTgGW6b8_Sse2p7E2CjCrAnMdKhxYDy9g";
-    const chatId = "736433782";
-
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
     try {
-      const response = await fetch(url, {
+
+      const response = await fetch(form.action, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message,
-          parse_mode: "Markdown"
-        })
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
 
-      const formMessage = document.getElementById("form-message");
-
       if (response.ok) {
-        if (formMessage) {
-          formMessage.innerHTML = "Спасибо! Мы получили вашу анкету ♥";
-          formMessage.style.color = "#336164";
-        }
+
         form.reset();
-      } else {
+
         if (formMessage) {
-          formMessage.innerHTML = "Что-то пошло не так... Напишите нам в личку";
-          formMessage.style.color = "red";
+          formMessage.textContent = "Спасибо! Анкета отправлена 💌";
         }
+
+      } else {
+
+        if (formMessage) {
+          formMessage.textContent = "Ошибка отправки";
+        }
+
       }
+
     } catch (error) {
-      const formMessage = document.getElementById("form-message");
+
       if (formMessage) {
-        formMessage.innerHTML = "Ошибка соединения. Попробуйте позже";
-        formMessage.style.color = "red";
+        formMessage.textContent = "Ошибка соединения";
       }
-      console.error(error);
+
+    } finally {
+
+      isSending = false;
+
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = "1";
     }
+
   });
+
 }
 
 

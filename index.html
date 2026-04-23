@@ -224,11 +224,22 @@
     пожалуйста, подтвердите, сможете ли <br>вы разделить с нами радость, ответив на <br>несколько вопросов. 
   </p>
 
-  <form id="rsvp-form" class="rsvp-form">
-    <div class="form-group fade-in">
-      <label for="name">Ваше имя и фамилия</label>
-      <input type="text" id="name" name="name"  required>
-    </div>
+      <form 
+        id="rsvp-form"
+        class="rsvp-form"
+        action="https://formsubmit.co/plyasheva4856@mail.com"
+        method="POST"
+      >
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="Новая анкета со свадьбы">
+        <input type="hidden" name="Сайт" value="https://wedding2026day.github.io/Aleksandr_Valeria/">
+
+        <div class="form-group fade-in">
+          <label for="name">Ваше имя и фамилия</label>
+          <input type="text" id="name" name="name" required>
+        </div>
 
     <div class="form-group radio-group fade-in">
       <label>Сможете ли вы присутствовать?</label>
