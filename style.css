@@ -1,0 +1,1213 @@
+@font-face {
+  font-family: 'Souses-Thin';
+  src: url('fonts/Souses-Thin.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GentlemensScript';
+  src: url('fonts/GentlemensScript-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: auto !important;       /* высота = высоте контента */
+  min-height: 0 !important;      /* убираем принудительную высоту экрана */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* ── БЛОК 1 ── Hero ──────────────────────────────────────── */
+
+.block-1.hero {
+  position: relative;
+}
+
+.top-bar {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.corner-text {
+  font-family: 'Souses-Thin', cursive;
+  font-size: 12pt;
+  max-width: 224px;
+  color: #432A24;
+  text-align: right;
+  letter-spacing: 0.5px;
+  line-height: 1.28;
+  margin-top: 70px;
+}
+
+/* сдвигаем контент под фиксированную шапку */
+body {
+  padding-top: 50px;
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  margin-top: 0;                /* теперь шапка фиксированная → margin не нужен */
+  overflow: visible;
+}
+
+.hero-image .background {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin-top: 90px;
+}
+
+.hero-image .love {
+  position: absolute;
+  top: 140px;
+  left: 70%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: auto;
+  z-index: 5;
+}
+
+.hero-image .caption {
+  position: absolute;
+  bottom: -90px;                /* было -50 → подбери под свою картинку */
+  left: 0;
+  right: 0;
+  z-index: 10;
+  text-align: center;
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.hero-image .caption p {
+  font-family: 'GentlemensScript', cursive;
+  font-size: 44pt;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: 0.3px;
+  color: #336164;
+  position: relative;
+}
+
+.hero-image .caption .alina {
+  top: -15px;                   /* ← подбери под глаз */
+  left: 60px;                   /* ← подбери под глаз */
+  display: inline-block;
+}
+
+/* ── БЛОК 2 ── Текст + фото ──────────────────────────────────────── */
+
+.block-2.memories {
+  width: 100%;
+  padding: 90px 20px 40px;
+  background: #fff;
+  text-align: center;
+}
+
+.text-content {
+  max-width: 480px;
+  margin: 0 auto 48px auto;
+}
+
+.intro-text {
+  font-family: 'Souses-Thin';
+  font-size: 17px;
+  line-height: 1.55;
+  color: #432A24;
+  margin-bottom: 1.5em;
+}
+
+.intro-text:last-child {
+  margin-bottom: 0;
+}
+
+/* фото под текстом */
+.memories-photo {
+  width: 100%;
+  
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  
+}
+
+.memories-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  
+}
+
+/* ── БЛОК 3 ── Заголовок + текст слева + фото справа ─────────────── */
+
+.block-3.story {
+  padding: 10px 16px 10px;     /* увеличил padding-bottom, чтобы место было */
+  position: relative;            /* ← важно для absolute внутри */
+  overflow: hidden;
+}
+
+.section-title {
+  font-family: 'GentlemensScript', cursive;
+  font-size: 32.9pt;
+  color: #336164;
+  text-align: center;
+  margin: 0 0 48px;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.content-wrapper {
+  position: relative;
+  min-height: 380px;             /* ← подбери высоту под твоё фото/текст */
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.text-column {
+  position: relative;
+  z-index: 3;                   
+  padding: 20px 16px;
+  
+  border-radius: 12px;
+  /* max-width: 65%;                
+  margin: 60px auto 40px 0px;
+  margin-left: -55px;
+  margin-top: 100px;
+  text-align: center; */
+}
+
+.text-lead {
+  position: relative;
+  z-index: 3;                    /* выше фото */
+  padding: 20px 16px;
+  
+  border-radius: 12px;
+  max-width: 65%;                /* текст не на всю ширину */
+  margin: 60px auto 40px 0px;
+  margin-left: -75px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+.photo-column {
+  position: absolute;
+  inset: 0;                      /* растягиваем на весь .content-wrapper */
+  z-index: 1;                    /* под текстом */
+}
+
+.block-3 .story-photo {
+  width: 290px;
+  height: 390px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  margin-left: 90px;
+}
+
+/* ── Разное форматирование абзацев ──────────────────────────────── */
+
+.text-lead {
+  font-family: 'Souses-Thin';
+  font-size: 11pt;
+  line-height: 1.35;
+  color: #432A24;
+  margin: 0 0 -1 0;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+.text-body {
+  margin-top: -50px;
+  margin-left: -255px;
+  font-size: 26.5pt;
+  line-height: 1;
+  color: #336164;
+  /* margin: 0 0 0.5em 0; */
+  text-align: center;
+  font-family: 'GentlemensScript'
+  
+}
+
+.text-accent {
+  margin-top: 10px;
+  margin-left: -25px;
+  font-size: 9.7pt;
+  line-height: 1.5;
+  color: #432A24;
+  /* margin: 0 0 0 0; */
+  font-family: 'Souses-Thin';
+  text-align: left;
+}
+
+.text-accent strong {
+  color: #432A24;
+  font-style: normal;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ── БЛОК 4 ── Заголовок + 4 фото вертикально ──────────────────────── */
+
+.block-4.gallery {
+  width: 100%;
+  padding: auto 16px 60px;
+  background: #fff;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;                     /* расстояние между фото */
+  max-width: 420px;              /* максимальная ширина галереи — под мобильный */
+  margin: 0 auto;
+}
+
+.gallery-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  
+  object-fit: cover;
+}
+
+/* Если хочешь фото квадратными */
+.gallery-photo.square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Лёгкое увеличение при касании (опционально) */
+.gallery-photo:active {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+/* ── БЛОК 5 ── Заголовок + горизонтальный скролл галереи ───────────── */
+
+.block-5.gallery-horizontal {
+  width: 100%;
+  padding: 50px 0 10px;
+  background: #fff;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.block-5.gallery-horizontal,
+.gallery-container,
+.gallery-track {
+  
+  height: auto !important;
+}
+
+.gallery-container {
+  position: relative;
+  overflow-x: auto;              /* горизонтальный скролл */
+  -webkit-overflow-scrolling: touch; /* плавный скролл на iOS */
+  scrollbar-width: none;         /* скрываем скроллбар в Firefox */
+  scroll-snap-type: x mandatory; /* опционально — фото "прилипают" */
+  overflow-y: hidden;   /* ← обязательно */
+  
+}
+
+.gallery-container::-webkit-scrollbar {
+  display: none;                 /* скрываем скроллбар в Chrome/Safari */
+}
+
+.gallery-track {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;                     /* расстояние между фото */
+  padding: 0 8px;               /* отступы слева/справа от первого/последнего */
+  scroll-snap-align: start;      /* опционально */
+}
+
+
+
+.gallery-item {
+  width: 60vw;                   /* ≈ 2 фото на экране (можно 42–48vw) */
+  max-width: 280px;              /* ограничение максимальной ширины одного фото */
+  height: 200px;
+  flex-shrink: 0;                /* не сжимаются при нехватке места */
+  border-radius: 16px;
+  
+  object-fit: contain;
+  scroll-snap-align: start;      /* фото "прилипают" при скролле */
+  transition: transform 0.25s ease;
+  
+}
+
+.gallery-item:active {
+  transform: scale(1.04);        /* лёгкое увеличение при касании */
+}
+
+.overlay-photo {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  z-index: 5;
+
+  width: 111px;
+  max-width: 240px;
+  height: auto;
+
+  border-radius: 16px;
+  object-fit: cover;
+
+  transform: translateY(70px); /* двигаем вниз */
+  pointer-events: none;
+}
+
+/* ── БЛОК 6 ── Заголовок + абзац + фото + 2 абзаца + фото ───────────── */
+
+.block-6.story-section {
+  width: 100%;
+  padding: 50px 16px 10px;
+  background: #fff;
+  text-align: center;
+}
+
+.story-content {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.story-paragraph {
+  font-family: 'Souses-Thin', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #432A24;
+  margin: 0 0 2em 0;
+  letter-spacing: 0.3px;
+}
+
+.story-paragraph.first {
+  font-family: 'Souses-Thin', sans-serif;
+  color: #432A24;
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 2.5em;
+}
+
+.story-paragraph:last-of-type {
+  margin-bottom: 2.5em;
+}
+
+.story-photo-wrapper {
+  margin: 2em auto;
+  max-width: 100%;
+  border-radius: 16px;
+  overflow: contain;
+  
+  
+}
+
+.block-6 .story-photo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* ── БЛОК 7 ── Заголовок + 3 фото друг под другом ───────────────────── */
+
+.block-7.photos {
+  width: 100%;
+  padding: 10px 16px 40px;
+  background: #fff;
+  text-align: center;
+}
+
+.photos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;                     /* расстояние между фото — можно 20–40px */
+  max-width: 420px;              /* ширина галереи — под мобильный */
+  margin: 0 auto;
+}
+
+.photo-item {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* ── БЛОК 8 ── фото + текст + коллаж + фото с текстом + фото ──────── */
+
+.block-8.memories-collage {
+  width: 100%;
+  padding: 10px 0 10px;
+  background: #fff;
+  padding-bottom: 0 !important;   /* или 20px, если нужен маленький отступ */
+  margin-bottom: 0 !important;
+}
+
+/* 1 и 5 — простые полноэкранные фото */
+.full-photo,
+.final-photo {
+  width: 100%;
+  margin: 0 0 32px;
+}
+
+.main-full {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  
+}
+
+/* 2 — параграф */
+.memory-text {
+  font-family: 'Souses-Thin', sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #432A24;
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto 48px;
+  padding: 0 16px;
+}
+
+/* 3 — фото с 4 наложенными маленькими фото */
+.collage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 48px;
+  z-index: 3;
+}
+
+.collage-base {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+  
+}
+
+/* 4 маленьких фото — позиции подбирай под свою базу */
+.overlay-small {
+  position: absolute;
+  width: 20%;                    /* размер маленьких фото */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.small-1 { top: 30%;  left: 4%;  }
+.small-2 { top: 30%;  right: 53%; }
+.small-3 { bottom: 28%; left: 51%; }
+.small-4 { bottom: 12%; right: 6%; }
+
+/* 4 — фото с наложенным текстом */
+.text-overlay-photo {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 48px;
+  z-index: 8;
+  padding-bottom: 60px;
+}
+
+.base-photo {
+  width: 150px;
+  height: 50px;
+  display: block;
+  border-radius: 16px;
+  object-fit: contain;
+  position: relative;            /* ← обязательно */
+  left: -30px;                   /* ← левее (отрицательное значение) */
+  top: -40px;                    /* ← выше (отрицательное значение) */
+  
+}
+
+.overlay-caption {
+  position: relative;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.overlay-caption p {
+  font-family: 'GentlemensScript', cursive;
+  font-size: 38px;
+  color: #432A24;
+  z-index: 5;
+  margin: 0;
+  padding: 0 20px;
+  line-height: 1.2;
+  position: relative;            /* ← обязательно */
+  left: -90px;                   /* ← левее (отрицательное значение) */
+  top: -40px;                    /* ← выше (отрицательное значение) */
+}
+
+.final-photo {
+  transform: translateY(-150px);
+  margin-bottom: -150px;
+}
+
+/* ── БЛОК 9 — Обратный отсчёт ────────────────────────────────────────── */
+
+.block-countdown {
+  width: 100%;
+  padding: 10px 16px 10px;
+  background: #fff;
+  text-align: center;
+  margin-top: 0 !important;
+  padding-top: 20px;              /* можно оставить небольшой отступ сверху */
+}
+
+.block-countdown .section-title {
+  margin-bottom: 40px;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.countdown-item {
+  
+  border-radius: 16px;
+  padding: 10px 20px;
+  min-width: 50px;
+  
+  
+}
+
+.countdown-item .number {
+  display: block;
+  font-family: 'GentlemensScript', cursive;
+  font-size: 48px;
+  line-height: 1;
+  color: #336164;
+  margin-bottom: 4px;
+}
+
+.countdown-item .label {
+  font-family: 'Souses-Thin', sans-serif;
+  font-size: 14px;
+  color: #432A24;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── БЛОК 10 – Форма RSVP ───────────────────────────────────────────── */
+
+.block-10.rsvp {
+  width: 100%;
+  padding: 50px 16px 80px;
+  background: #fff;
+  text-align: center;
+}
+
+.rsvp-text {
+  font-family: 'Souses-Thin';
+  font-size: 17px;
+  line-height: 1.5;
+  color: #432A24;
+  max-width: 420px;
+  margin: 0 auto 32px;
+}
+
+.rsvp-form {
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 32px;
+}
+
+.form-group label {
+  font-family: 'Souses-Thin';
+  display: block;
+  font-size: 16px;
+  color: #336164;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.radio-group,
+.checkbox-group {
+  margin-bottom: 32px;
+}
+
+.radio-label,
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #432A24;
+}
+
+.radio-label input,
+.checkbox-label input {
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: #336164;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #2a5151;
+}
+
+.form-message {
+  margin-top: 24px;
+  font-size: 16px;
+  color: #336164;
+}
+
+.rsvp-text,
+.form-group label {
+  color: #336164;                /* основной текст и заголовки полей */
+  font-size: 17px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #336164;         /* цвет галочки / кружочка */
+}
+/* Чтобы при фокусе был виден акцент */
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: 2px solid #336164;
+  outline-offset: 2px;
+}
+
+/* Опционально — фон выбранного радио/чекбокса */
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  background-color: #336164;
+}
+
+/* основной текст и заголовки полей — #336164 */
+.form-group > label,          /* только прямые дети .form-group */
+.rsvp-text {
+  color: #336164;
+}
+
+/* варианты ответов — #432A24 */
+.radio-label,
+.checkbox-label {
+  color: #432A24 !important;  /* !important на всякий случай */
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 8px 0;                 /* только вертикальный отступ */
+  border: none;                   /* убираем все границы */
+  border-bottom: 2px solid #ddd;  /* только нижняя линия */
+  border-radius: 0;               /* убираем скругление */
+  background: transparent;        /* без фона */
+  font-size: 17px;
+  color: #432A24;
+  transition: border-color 0.2s;
+}
+
+.form-group input[type="text"]:focus {
+  border-bottom-color: #336164;   /* цвет линии при фокусе */
+  outline: none;                  /* убираем стандартную обводку браузера */
+}
+
+/* ── БЛОК 11 – Фото поверх текста ───────────────────────────────────── */
+
+.block-11.overlay-text {
+  width: 100%;
+  padding: 0px 16px 0px;
+  background: #fff;
+  text-align: center;
+  padding: 60px 16px 0 !important;  /* ← padding-bottom: 0 */
+}
+
+.overlay-wrapper {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.overlay-image {
+  position: relative;
+  width: 100%;
+  max-width: 350px;               /* размер фото — подбери */
+  height: auto;
+  display: block;
+  margin: 0 auto -80px auto;      /* ← фото поднимается вверх и перекрывает текст */
+  border-radius: 16px;
+  top: -40px; 
+  z-index: 2;
+  object-fit: cover;
+}
+
+.text-block {
+  position: relative;
+  width: 700px;
+  border-radius: 20px;
+  padding: 0px 0px 0px;       /* большой верхний padding, чтобы фото наложилось */
+  z-index: 1;
+
+  /* Поднимаем текст выше */
+  margin-top: -90px;               /* ← основной способ поднять весь блок текста */
+  margin-left: -60px;         /* ← сдвигает левее */
+
+  /* Лёгкий поворот текста (всё вместе) */
+  transform: rotate(-2deg);        /* ← угол поворота, можно -3deg, -1.5deg, 2deg и т.д. */
+  transform-origin: top center;    /* поворачивает вокруг верхней центральной точки */
+}
+
+.text-block p {
+  font-family: 'GentlemensScript', sans-serif;
+  font-size: 26.8pt;
+  line-height: 1.6;
+  color: #336164;
+  margin: 0 0 0 0;
+  margin-top: -450px;
+  margin-bottom: 0px;
+}
+
+.text-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Контейнер, внутри которого будет текст, вылезающий за экран */
+.text-overflow-wrapper {
+  width: 100%;
+  overflow-x: visible;          /* позволяет контенту вылезать за границы */
+  overflow-y: hidden;           /* если не нужно вертикального скролла */
+  position: relative;
+}
+
+/* Сам блок с текстом, который будет вылезать */
+.text-overflow {
+  white-space: nowrap;          /* текст не переносится на новую строку */
+  overflow: visible;            /* обязательно! */
+  width: fit-content;           /* ширина по содержимому */
+  max-width: none;              /* снимаем любые ограничения */
+  
+  /* Пример: текст вылезает сильно вправо */
+  transform: translateX(100px); /* или margin-left: 100px; */
+  /* или */
+  /* margin-left: 150px; */     /* просто сдвиг влево/вправо */
+  
+  font-size: 18px;              /* или любой твой размер */
+  color: #336164;
+  font-family: 'Souses-Thin', sans-serif;
+}
+
+/* анимация появления при скролле */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* маленькие фото кликабельные */
+.overlay-small {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 20;
+  transform-origin: center center;
+  will-change: left, top, transform;
+}
+
+.overlay-small.is-flying,
+.overlay-small.is-landed {
+  pointer-events: none;
+}
+
+/* во время полета */
+.overlay-small.is-flying {
+  pointer-events: none;
+}
+
+/* когда уже долетело */
+.overlay-small.is-landed {
+  pointer-events: none;
+}
+.memories-collage {
+  position: relative;
+  overflow: visible;
+}
+
+.overlay-small {
+  cursor: pointer;
+  z-index: 20;
+  transform-origin: center center;
+  will-change: left, top, transform;
+}
+
+.music-toggle {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  color: #2f2f2f;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+}
+
+.music-toggle:hover {
+  transform: scale(1.06);
+}
+
+.music-toggle:active {
+  transform: scale(0.96);
+}
+
+/* экран */
+.envelope-screen {
+  position: fixed;
+  inset: 0;
+  background: #f5f5f5;
+  z-index: 99999;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.envelope-screen.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.envelope {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* контейнер конверта */
+.envelope{
+  position:relative;
+
+  width:100vw;
+  height:100vh;
+}
+
+/* общие стили */
+.shape {
+  position: absolute;
+  display: block;
+  max-width: none;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 7.5s cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+/* верх */
+.top-shape {
+  width: 500px;
+  top: -60px;
+  left: -50px;
+  z-index: 4;
+  transform: translateY(0);
+}
+
+/* низ */
+.bottom-shape {
+  width: 500px;
+  bottom: -10px;
+  left: -27px;
+  z-index: 1;
+  transform: translateY(0);
+}
+
+/* левая */
+.left-shape {
+  left: 0;
+  bottom: 0;
+  width: auto;
+  height: 100%;
+  z-index: 3;
+  transform: translateX(0);
+}
+
+/* правая */
+.right-shape {
+  right: 0;
+  bottom: 55px;
+  width: auto;
+  height: 100%;
+  z-index: 3;
+  transform: translateX(0);
+}
+
+/* кнопка */
+.open-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 40px;
+  background: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.envelope-screen {
+
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 99999;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.envelope-screen.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-content {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+body.envelope-locked {
+  overflow: hidden !important;
+}
+
+
+/* разъезд фигур */
+.envelope-screen.is-opening .top-shape {
+  transform: translateY(-120vh);
+}
+
+.envelope-screen.is-opening .bottom-shape {
+  transform: translateY(120vh);
+}
+
+.envelope-screen.is-opening .left-shape {
+  transform: translateX(-120vw);
+}
+
+.envelope-screen.is-opening .right-shape {
+  transform: translateX(120vw);
+}
+
+.envelope-screen.is-opening .open-btn {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.92);
+}
+
+.open-btn {
+  position: absolute;
+  left: 52%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.open-btn img {
+  width: 190px;
+  display: block;
+}
+
+.open-btn:hover img {
+  transform: scale(1.05);
+}
+
+.top-part,
+.bottom-part{
+  position:absolute;
+  inset:0;
+}
+.top-text{
+  font-family: 'Souses-Thin';
+  position:absolute;
+  top:90px;
+  left:50%;
+  transform:translateX(-50%);
+
+  z-index:6;
+
+  font-size:20px;
+  color:#432A24;
+  text-align:center;
+
+  transition:opacity 0.6s ease;
+}
+
+.bottom-text1{
+  font-family: 'GentlemensScript';
+  position:absolute;
+  bottom:180px;
+  left:50%;
+  transform:translateX(-50%);
+
+  z-index:6;
+
+  font-size:50px;
+  color:#336164;
+  text-align:center;
+  line-height:25px;
+
+  transition:opacity 0.6s ease;
+}
+
+.bottom-text{
+  font-family: 'Souses-Thin';
+  position:absolute;
+  bottom:120px;
+  left:50%;
+  transform:translateX(-50%);
+
+  z-index:6;
+
+  font-size:24px;
+  color:#432A24;
+  text-align:center;
+
+  transition:opacity 0.6s ease;
+}
+
+.envelope-screen.is-opening .top-text,
+.envelope-screen.is-opening .bottom-text,
+.envelope-screen.is-opening .bottom-text1{
+  opacity:0;
+}
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: #f5f5f5;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page-loader-inner {
+  text-align: center;
+}
+
+.page-loader-text {
+  font-family: 'Souses-Thin', sans-serif;
+  font-size: 18px;
+  color: #432A24;
+  letter-spacing: 0.5px;
+}

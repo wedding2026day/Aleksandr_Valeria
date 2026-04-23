@@ -1,0 +1,313 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Александр & Валерия</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="page-loader" id="pageLoader">
+  <div class="page-loader-inner">
+    <div class="page-loader-text">Загружаем приглашение...</div>
+  </div>
+</div>
+
+   <div class="envelope-screen" id="envelopeScreen">
+    <div class="envelope" id="envelope">
+      <div class="top-part">
+  <img src="img/top-shape.png" class="shape top-shape">
+
+  <div class="top-text">
+    Для вас <br> кое-что есть...
+  </div>
+</div>
+      <img src="img/left-shape.png" class="shape left-shape" alt="">
+      <img src="img/право.png" class="shape right-shape" alt="">
+      <div class="bottom-part">
+  <img src="img/низ.png" class="shape bottom-shape">
+
+  <div class="bottom-text1">
+    С любовью <br>и надеждой!
+  </div>
+
+  <div class="bottom-text">
+    10.07.2026
+  </div>
+</div>
+
+      <button id="openEnvelopeBtn" class="open-btn">
+  <img src="img/open-button.png" alt="Открыть">
+</button>
+    </div>
+  </div>
+
+<div class="site-content" id="siteContent">
+
+  <!-- БЛОК 1 – Hero / Вступление -->
+  <section class="block-1 hero">
+    <header class="top-bar">
+      <div class="corner-text">
+        Время пронеслось<br>
+        незаметно и у этих двух<br>
+        милых деток скоро<br>
+        свадьба...
+      </div>
+    </header>
+
+    <div class="hero-image">
+      <img src="img/1.png" alt="Детство" class="background" loading="eager" />
+
+      
+
+      <div class="caption">
+        <p>Александр &</p>
+        <p class="alina">Валерия</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЛОК 2 -->
+
+  <section class="block-2 memories">
+    <div class="text-content">
+      <p class="intro-text fade-in">
+        В нашей жизни предстоят <br> счастливые перемены!
+      </p>
+
+      <p class="intro-text fade-in">
+        Мы хотим, чтобы в этот день рядом с <br> нами были самые близкие и дорогие <br>для нас люди. Будем рады разделить <br>с вами чудесный праздник в день <br>нашей свадьбы.
+      </p>
+    </div>
+
+    <div class="memories-photo fade-in">
+      <img src="img/3.png" alt="Вместе навсегда" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- БЛОК 3 – Заголовок + текст слева + фото справа -->
+<section class="block-3 story">
+  <h2 class="section-title fade-in">Место встречи</h2>
+
+  <div class="content-wrapper">
+    <div class="text-column">
+      <p class="text-lead fade-in">
+        Ресторан
+      </p>
+
+      <p class="text-body fade-in">
+        Алимова <br>
+        Балка
+      </p>
+
+      <p class="text-accent fade-in">
+       Бахчисарайский <br> район,<br> 
+       ул. Первомайская <br> д.70А
+      </p>
+    </div>
+
+    <div class="photo-column fade-in">
+      <img src="img/4.png" alt="Мы вдвоём" loading="lazy" class="story-photo" />
+    </div>
+  </div>
+</section>
+
+<!-- БЛОК 4 – Заголовок + 4 фото вертикально -->
+<section class="block-4 gallery">
+  <h2 class="section-title fade-in">План дня</h2>
+
+  <div class="gallery-grid">
+    <img src="img/5.png" alt="Момент 1" loading="lazy" class="gallery-photo fade-in" />
+    <img src="img/6.png" alt="Момент 2" loading="lazy" class="gallery-photo fade-in" />
+    <img src="img/7.png" alt="Момент 3" loading="lazy" class="gallery-photo fade-in" />
+    <img src="img/8.png" alt="Момент 4" loading="lazy" class="gallery-photo fade-in" />
+    <img src="img/9.png" alt="Момент 5" loading="lazy" class="gallery-photo fade-in" />
+    <img src="img/10.png" alt="Момент 6" loading="lazy" class="gallery-photo fade-in" />
+  </div>
+</section>
+
+<!-- БЛОК 5 – Заголовок + горизонтальная галерея (скролл вправо) -->
+<section class="block-5 gallery-horizontal">
+  <h2 class="section-title fade-in">Мы выросли!</h2>
+
+  <div class="gallery-container">
+    <div class="gallery-track">
+      <img src="img/11.png"  alt="Воспоминание 1" loading="lazy" class="gallery-item" />
+      <img src="img/12.png" alt="Воспоминание 2" loading="lazy" class="gallery-item" />
+      <img src="img/13.png" alt="Воспоминание 3" loading="lazy" class="gallery-item" />
+      <img src="img/14.png" alt="Воспоминание 4" loading="lazy" class="gallery-item" />
+    </div>
+    <img src="img/14б.png" alt="Наложенное фото" loading="lazy" class="overlay-photo" />
+  </div>
+    
+</section>
+
+<!-- БЛОК 6 – Заголовок + текст + фото + текст + фото -->
+<section class="block-6 story-section">
+  <h2 class="section-title fade-in">Дресс-код</h2>
+
+  <div class="story-content">
+    <p class="story-paragraph first fade-in">
+      Поддержите нас вашими улыбками и <br> объятиями, а также красивыми <br>нарядами в палитре торжества:
+    </p>
+
+    <div class="story-photo-wrapper">
+      <img src="img/15.png" alt="Первая встреча" loading="lazy" class="story-photo fade-in" />
+    </div>
+
+    <p class="story-paragraph fade-in">
+      Дорогие девушки, будем <br>признательны если полностью в <br>светлом будет только невеста
+    </p>
+
+    <p class="story-paragraph fade-in">
+      Чтобы вам было проще выбрать наряд,<br> мы собрали подборку с примерами,<br> соответствующими нашему дресс-коду
+    </p>
+
+    <div class="story-photo-wrapper">
+      <img src="img/16.png" alt="Сейчас" loading="lazy" class="story-photo fade-in" />
+    </div>
+  </div>
+</section>
+
+<!-- БЛОК 7 – Заголовок + 3 фото вертикально -->
+<section class="block-7 photos">
+  <h2 class="section-title fade-in">Несколько просьб</h2>
+
+  <div class="photos-list">
+    <img src="img/17.png" alt="Момент 1" loading="lazy" class="photo-item fade-in" />
+    <img src="img/18.png" alt="Момент 2" loading="lazy" class="photo-item fade-in" />
+  </div>
+</section>
+
+<!-- БЛОК 8 -->
+<section class="block-8 memories-collage">
+  <!-- 1. большое фото -->
+  <div class="full-photo">
+    <img src="img/19.png" alt="Основное фото" loading="lazy" class="main-full fade-in" />
+  </div>
+
+
+<!-- БЛОК 9 — Обратный отсчёт до свадьбы -->
+<section class="block-countdown">
+  <h2 class="section-title fade-in">До нашей свадьбы осталось</h2>
+
+  <div class="countdown-container" id="countdown">
+    <div class="countdown-item">
+      <span class="number fade-in" id="days">0</span>
+      <span class="label fade-in">дней</span>
+    </div>
+    <div class="countdown-item">
+      <span class="number fade-in" id="hours">0</span>
+      <span class="label fade-in">часов</span>
+    </div>
+    <div class="countdown-item">
+      <span class="number fade-in" id="minutes">0</span>
+      <span class="label fade-in">минут</span>
+    </div>
+    <div class="countdown-item">
+      <span class="number fade-in" id="seconds">0</span>
+      <span class="label fade-in">секунд</span>
+    </div>
+  </div>
+</section>
+
+<!-- БЛОК 10 – Форма RSVP / Анкета гостя -->
+<section class="block-10 rsvp">
+  <h2 class="section-title fade-in">Анкета</h2>
+
+  <p class="rsvp-text fade-in">
+    Для нас нет подарка ценнее, чем ваше <br>присутствие в этот особенный день
+  </p>
+
+  <p class="rsvp-text fade-in">
+    пожалуйста, подтвердите, сможете ли <br>вы разделить с нами радость, ответив на <br>несколько вопросов. 
+  </p>
+
+  <form id="rsvp-form" class="rsvp-form">
+    <div class="form-group fade-in">
+      <label for="name">Ваше имя и фамилия</label>
+      <input type="text" id="name" name="name"  required>
+    </div>
+
+    <div class="form-group radio-group fade-in">
+      <label>Сможете ли вы присутствовать?</label>
+      <label class="radio-label">
+        <input type="radio" name="attendance" value="yes" required>
+        Да, с удовольствием!
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="attendance" value="no">
+        К сожалению, не смогу
+      </label>
+    </div>
+
+    <div class="form-group checkbox-group fade-in">
+      <label>Ваши предпочтения по напиткам:</label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="items[]" value="вино красное"> вино красное
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="items[]" value="вино белое"> вино белое
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="items[]" value="шампанское"> шампанское
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="items[]" value="коньяк"> коньяк
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="items[]" value="виски"> виски
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="items[]" value="водка"> водка
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="items[]" value="безалкогольные напитки"> безалкогольные напитки
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="items[]" value="свой вариант"> свой вариант
+      </label>
+    </div>
+
+    <div class="form-group radio-group fade-in">
+      <label>Нужно ли вам размещение?</label>
+      <label class="radio-label">
+        <input type="radio" name="plusone" value="yes">
+        нужно размещение
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="plusone" value="no">
+        есть где остановиться
+      </label>
+    </div>
+
+    <button type="submit" class="submit-btn fade-in">Отправить</button>
+  </form>
+
+  <p id="form-message" class="form-message"></p>
+</section>
+
+<!-- БЛОК 11 – Фото поверх текста -->
+<section class="block-11 overlay-text">
+  <div class="overlay-wrapper">
+    <!-- Фото сверху -->
+    <img src="img/20.png" alt="Фото поверх текста" loading="lazy" class="overlay-image fade-in" />
+
+    <!-- Текст под фото -->
+    <div class="text-block fade-in">
+      <p>Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!Празднуем любовь!</p>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="script.js"></script>
+  <audio id="bg-music" loop preload="auto">
+  <source src="приглашение .mp3" type="audio/mpeg" />
+</audio>
+
+<button id="music-toggle" class="music-toggle" aria-label="Пауза или воспроизведение музыки">
+  ❚❚
+</button>
+</body>
+</html>
